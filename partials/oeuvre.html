@@ -1,19 +1,20 @@
 <div layout="column" flex id="content">
-    <md-content layout="row" flex class="md-padding md-primary md-hue-2">
+    <md-content layout="column" flex class="md-padding md-primary md-hue-2">
 
+        <img ng-src="{{oeuvre.image}}" alt="...">
         <md-card flex="100">
             <md-card-content >
                 <md-input-container>
                     <label>Identifiant inventaire</label>
-                    <input ng-model="" type="text"/>
+                    <input ng-model="oeuvre.oeuvreId" type="text"/>
                 </md-input-container>
                 <md-input-container>
                     <label>Désignation</label>
-                    <input ng-model="" type="text"/>
+                    <input ng-model="oeuvre.designation" type="text"/>
                 </md-input-container>
                 <md-input-container>
                     <label>Auteur(es)</label>
-                    <input ng-model="" type="text"/>
+                    <input ng-model="oeuvre.auteur" type="text"/>
                 </md-input-container>
             </md-card-content>
         </md-card>
@@ -24,31 +25,31 @@
             <md-card-content>
                 <md-input-container>
                     <label>Datation</label>
-                    <input ng-model="" type="text"/>
+                    <input ng-model="oeuvre.datation" type="text"/>
                 </md-input-container>
                 <md-input-container>
                     <label>Provenance</label>
-                    <input ng-model="" type="text"/>
+                    <input ng-model="oeuvre.provenance" type="text"/>
                 </md-input-container>
                 <md-input-container>
                     <label>Matériaux</label>
-                    <input ng-model="" type="text"/>
+                    <input ng-model="oeuvre.materiaux" type="text"/>
                 </md-input-container>
                 <md-input-container>
                     <label>Techinque(s) de réalisation</label>
-                    <input ng-model="" type="text"/>
+                    <input ng-model="oeuvre.techniques" type="text"/>
                 </md-input-container>
                 <md-input-container>
                     <label>État</label>
-                    <input ng-model="" type="text"/>
+                    <input ng-model="oeuvre.indicationEtat" type="text"/>
                 </md-input-container>
                 <md-input-container>
                     <label>Marques et inscriptions</label>
-                    <input ng-model="" type="text"/>
+                    <input ng-model="oeuvre.marquesInscription" type="text"/>
                 </md-input-container>
                 <md-input-container>
                     <label>Fonction d'usage</label>
-                    <input ng-model="" type="text"/>
+                    <input ng-model="oeuvre.fonction" type="text"/>
                 </md-input-container>
             </md-card-content>
         </md-card>
@@ -57,27 +58,25 @@
                 Acquisition
             </md-toolbar>
             <md-card-content>
-                <!--
-                    Mode d'acquisition
-                    Nom donateur
-                    date qcquistion
-                    prix d'achat
-                -->
                 <md-input-container>
                     <label>Mode d'acquistion</label>
-                    <input ng-model="" type="text"/>
+                    <input ng-model="oeuvre.modeAcquisition" type="text"/>
                 </md-input-container>
                 <md-input-container>
                     <label>Nom du donateur</label>
-                    <input ng-model="" type="text"/>
+                    <input ng-model="oeuvre.nomDonnateur" type="text"/>
                 </md-input-container>
                 <md-input-container>
                     <label>Date d'acquistion</label>
-                    <input ng-model="" type="text"/>
+                    <input ng-model="oeuvre.dateAcquisition" type="text"/>
                 </md-input-container>
                 <md-input-container>
                     <label>Prix</label>
-                    <input ng-model="" type="text"/>
+                    <input ng-model="oeuvre.prix" type="text"/>
+                </md-input-container>
+                <md-input-container>
+                    <label>Avis des instances scientifiques</label>
+                    <input type="text" ng-model="oeuvre.avisScientifique"/>
                 </md-input-container>
 
             </md-card-content>
@@ -88,9 +87,9 @@
             </md-toolbar>
             <md-card-content>
                 <!-- Observation -->
-                <textarea ng-model="">
+                <div text-angular ng-model="oeuvre.observations">
 
-                </textarea>
+                </div>
             </md-card-content>
         </md-card>
 

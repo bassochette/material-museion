@@ -1,12 +1,14 @@
 <div layout="column">
     <md-content>
         <md-list>
-            <md-item>
-                <div class="md-tile-left">
-                    <img ng-src="" alt="oeuvre caption"/>
+            <md-item ng-repeat="oeuvre in list" layout="row">
+                <div class="md-tile-left" flex="10">
+                    <img ng-src="{{oeuvre.image}}" class="image-preview" alt="..."/>
                 </div>
-                <div class="md-tile-content">
-                    <h3><span>M000-1021-1233</span>  <span>Designation de l'oeuvre</span></h3>
+                <div class="md-tile-content" flex="90">
+                    <p>{{oeuvre.oeuvreId}}</p>
+                    <h3>{{oeuvre.designation}}</h3>
+                    <h4>{{oeuvre.auteur}}</h4>
                 </div>
             </md-item>
         </md-list>
