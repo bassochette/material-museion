@@ -10,6 +10,7 @@
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no"/>
 
     <link rel="stylesheet" href="./bower_components/angular-material/angular-material.css"/>
+    <link rel='stylesheet' href='/bower_components/textAngular/src/textAngular.css'>
     <link rel="stylesheet" href="./styles/style.css"/>
 
 </head>
@@ -18,9 +19,6 @@
 <md-toolbar class="md-primary" md-scroll-shrink>
     <h2 class="md-toolbar-tools">Museion</h2>
     <div layout="row">
-        <md-button ng-cick="toggleSidenav('left')" flex>
-            M
-        </md-button>
         <button ng-click="toggleSidenav('left')" flex>
             <span>Menu</span>
         </button>
@@ -32,46 +30,30 @@
     <md-sidenav layout="column"
                 class="md-sidenav-left"
                 md-component-id="left">
-        <md-toolbar class="md - md-toolbar-tools md-primary md-hue-2">
+        <md-toolbar class="md-toolbar-tools md-primary md-hue-2">
             Menu
         </md-toolbar>
         <md-content>
             <md-list>
                 <md-item >
-                    <md-button class="md-accent">
-                        Add
+                    <md-button class="md-accent" href="#/">
+                        New
                     </md-button>
                 </md-item>
                 <md-item>
-                    <md-button class="md-accent">
+                    <md-button class="md-accent" href="#/inventaire">
                         Inventory
-                    </md-button>
-                </md-item>
-                <md-item>
-                    <md-button class="md-accent">
-                       Action 3
-                    </md-button>
-                </md-item>
-                <md-item>
-                    <md-button class="md-accent">
-                        Action 4
-                    </md-button>
-                </md-item>
-                <md-item>
-                    <md-button class="md-accent">
-                        Action 5
                     </md-button>
                 </md-item>
             </md-list>
         </md-content>
     </md-sidenav>
-    <div layout="column" flex id="content">
-        <md-content layout="column" flex class="md-padding "md-primary md-hue-2>
 
+    <md-content flex="100">
+        <ng-view onload="" autoscroll="" flex="100">
+        </ng-view>
+    </md-content>
 
-
-        </md-content>
-    </div>
 </div>
 
 
@@ -80,7 +62,7 @@
 <script src="./bower_components/angular-material/angular-material.js"></script>
 <script src="./bower_components/angular-animate/angular-animate.js"></script>
 <script src="./bower_components/angular-aria/angular-aria.js"></script>
-
+<script src="./bower_components/angular-route/angular-route.js"></script>
 <script src="./js/app.js"></script>
 </body>
 </html>

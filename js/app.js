@@ -1,7 +1,8 @@
 (function () {
 
     var app = angular.module('museion', [
-        'ngMaterial'
+        'ngMaterial',
+        'ngRoute'
     ]);
 
     app.controller('AppController', ['$scope', '$mdSidenav', function($scope, $mdSidenav){
@@ -33,5 +34,29 @@
                 'hue-3' : 'A200'
             });
     });
+
+    app.controller('oeuvreController', ['$scope', function($scope){
+
+    }]);
+
+    app.controller('inventaire', ['$scope', function($scope){
+
+    }]);
+
+    app.config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvier){
+
+        $routeProvider
+            .when('/', {
+                templateUrl: 'partials/oeuvre.html',
+                controller: 'oeuvreController'
+            })
+            .when('/inventaire',{
+                templateUrl: 'partials/inventaire.html',
+                controller: 'iventaireController'
+            })
+            .otherwise({
+                redirectTo: '/'
+            });
+    }]);
 
 })();
