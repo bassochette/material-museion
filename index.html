@@ -4,6 +4,7 @@
 
     <title>Material Museion</title>
 
+
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="description" content="">
@@ -16,32 +17,33 @@
 </head>
 <body ng-app="museion" layout="column" ng-controller="AppController">
 
-<md-toolbar class="md-primary" md-scroll-shrink>
-    <h2 class="md-toolbar-tools" ng-click="toggleSidenav('left')" flex>Museion</h2>
-</md-toolbar>
-
 <div layout="row" flex>
     <md-sidenav layout="column"
-                class="md-sidenav-left"
                 md-component-id="left">
-        <md-toolbar class="md-toolbar-tools md-primary" ng-click="toggleSidenav('left')" flex>
-            Menu
+        <md-toolbar class="md-toolbar-tools md-primary" ng-click="toggleSidenav('left')">
+            Museion
         </md-toolbar>
-        <md-content>
-            <md-list>
-                <md-item >
-                    <md-button href="#/">Nouvelle oeuvre</md-button>
-                <md-item >
-                    <md-button class="" href="#/inventaire">
-                        Inventaire
-                    </md-button>
-                </md-item>
-            </md-list>
-        </md-content>
+        <md-button href="#/"  class="md-primary">
+            Acceuil
+        </md-button>
+
+        <md-button href="#/oeuvre" class="md-primary" >
+            Nouvelle oeuvre
+        </md-button>
+
+
+        <md-button href="#/inventaire" class="md-primary">
+            Inventaire
+        </md-button>
+
     </md-sidenav>
 
-    <md-content flex="100">
-        <ng-view onload="" autoscroll="" flex="100">
+
+    <md-button class="md-primary md-fab md-fab-top-left" ng-click="toggleSidenav('left')">
+        M
+    </md-button>
+    <md-content flex>
+        <ng-view onload="" autoscroll="" flex>
         </ng-view>
     </md-content>
 
@@ -54,12 +56,15 @@
 <script src="./bower_components/angular-animate/angular-animate.js"></script>
 <script src="./bower_components/angular-aria/angular-aria.js"></script>
 <script src="./bower_components/angular-route/angular-route.js"></script>
+<script src="./bower_components/angular-resource/angular-resource.js"></script>
 
 <script src='/bower_components/textAngular/dist/textAngular-rangy.min.js'></script>
 <script src='/bower_components/textAngular/dist/textAngular-sanitize.min.js'></script>
 <script src='/bower_components/textAngular/dist/textAngular.min.js'></script>
 
 <script src="./js/app.js"></script>
+<script src="./js/services/Oeuvre.js"></script>
+<script src="./js/controller/Oeuvre.js"></script>
 
 </body>
 </html>

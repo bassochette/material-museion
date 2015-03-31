@@ -1,14 +1,20 @@
+<h1>This is inventory</h1>
+
 <div layout="column">
     <md-content>
         <md-list>
-            <md-item ng-repeat="oeuvre in list" layout="row">
-                <div class="md-tile-left" flex="10">
-                    <img ng-src="{{oeuvre.image}}" class="image-preview" alt="..."/>
-                </div>
-                <div class="md-tile-content" flex="90">
-                    <p>{{oeuvre.oeuvreId}}</p>
-                    <h3>{{oeuvre.designation}}</h3>
-                    <h4>{{oeuvre.auteur}}</h4>
+            <md-item ng-repeat="oeuvre in oeuvres" layout="row" >
+                <div class="md-tile-content" flex="85">
+                    <md-button flex ng-href="#/oeuvre/{{oeuvre.id}}" >
+                        <md-list layout="row" flex>
+                            <md-item flex>{{ oeuvre.oeuvreId }}</md-item>
+                            <md-item flex>{{ oeuvre.designation }}</md-item>
+                            <md-item flex>{{ oeuvre.auteur}}</md-item>
+                            <md-item flex> {{ oeuvre.datation }}</md-item>
+                            <md-item flex> {{ oeuvre.updatedAt.split('T')[0]}}</md-item>
+                        </md-list>
+                    </md-button>
+
                 </div>
             </md-item>
         </md-list>
